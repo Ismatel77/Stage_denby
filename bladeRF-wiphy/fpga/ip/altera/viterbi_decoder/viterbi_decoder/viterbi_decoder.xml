@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2021.07.05.11:03:34"
+ date="2021.07.30.19:20:53"
  outputDirectory="/home/ismael/wiphy-build/bladeRF-wiphy/fpga/ip/altera/viterbi_decoder/viterbi_decoder/">
  <perimeter>
   <parameter
@@ -85,13 +85,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="viterbi_decoder:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=Unknown,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=,AUTO_GENERATION_ID=1625475814,AUTO_UNIQUE_ID=(altera_viterbi_ii:20.1:BSF=1,BSFDISPLAY=0,FMAX=80.0,ISBER=0,ISOCTAL=Decimal,L=7,LATINCYC=174.0,LATINS=2.175,NODESYNC=0,TROUGH=80.0,acs_units=1,ber=unused,best_state_finder=unused,bmgwide=13,constraint_length_m_1=6,dec_mode=V,design_env=NATIVE,ga=91,gb=121,gc=0,gd=0,ge=0,gf=0,gg=0,log2_n_max=1,n=2,n_max=2,ncodes=1,node_sync=unused,numerr_size=8,parallel_optimization=Continuous,rr_size=16,sel_code_size=1,selected_device_family=Cyclone V,softbits=8,use_altera_syncram=0,v=42,viterbi_type=Parallel,vlog_wide=6)"
+   parameterizationKey="viterbi_decoder:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=Unknown,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=,AUTO_GENERATION_ID=1627665652,AUTO_UNIQUE_ID=(altera_viterbi_ii:20.1:BSF=1,BSFDISPLAY=0,FMAX=80.0,ISBER=0,ISOCTAL=Decimal,L=7,LATINCYC=174.0,LATINS=2.175,NODESYNC=0,TROUGH=80.0,acs_units=1,ber=unused,best_state_finder=unused,bmgwide=13,constraint_length_m_1=6,dec_mode=V,design_env=NATIVE,ga=91,gb=121,gc=0,gd=0,ge=0,gf=0,gg=0,log2_n_max=1,n=2,n_max=2,ncodes=1,node_sync=unused,numerr_size=8,parallel_optimization=Continuous,rr_size=16,sel_code_size=1,selected_device_family=Cyclone V,softbits=8,use_altera_syncram=0,v=42,viterbi_type=Parallel,vlog_wide=6)"
    instancePathKey="viterbi_decoder"
    kind="viterbi_decoder"
    version="1.0"
    name="viterbi_decoder">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1625475814" />
+  <parameter name="AUTO_GENERATION_ID" value="1627665652" />
   <parameter name="AUTO_DEVICE" value="Unknown" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
