@@ -110,7 +110,7 @@ add wave -noupdate -divider {BEGIN RX SUMMARY}
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_ack
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_dec_req
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_inc_req
-add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_max
+add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_max 
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_nack
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_rst_req
 add wave -noupdate -format Analog-Step -height 84 -max 1962.0000000000002 -min -2025.0 -radix decimal /wlan_fx3_gpif_tb/U_wlan_top/in_i
