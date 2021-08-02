@@ -50,7 +50,9 @@ set wlan_synthesis_rx [ list \
     [file normalize [ file join $here ../ip/nuand/cordic.vhd] ]             \
     [file normalize [ file join $here ../ip/nuand/nco.vhd] ]                \
     [file normalize [ file join $here ../vhdl/wlan_agc.vhd] ]               \
-    [file normalize [ file join $here ../vhdl/wlan_agc_drv.vhd] ]       \
+    [file normalize [ file join $here ../vhdl/wlan_agc_drv.vhd] ]           \
+    [file normalize [ file join $here ../vhdl/wlan_dsss_rx_power.vhd] ]     \
+    [file normalize [ file join $here ../vhdl/wlan_dsss_rx_snr.vhd] ]       \
     [file normalize [ file join $here ../vhdl/wlan_dsss_despreader.vhd] ]   \
     [file normalize [ file join $here ../vhdl/wlan_dsss_plcp_crc.vhd] ]     \
     [file normalize [ file join $here ../vhdl/wlan_dsss_p_norm.vhd] ]       \
@@ -84,8 +86,6 @@ set wlan_synthesis_rx [ list \
     [file normalize [ file join $here ../vhdl/wlan_p_norm.vhd] ]            \
     [file normalize [ file join $here ../vhdl/wlan_acquisition.vhd] ]       \
     [file normalize [ file join $here ../vhdl/wlan_rx.vhd] ]                \
-    [file normalize [ file join $here ../vhdl/wlan_dsss_rx_power.vhd] ]     \
-    [file normalize [ file join $here ../vhdl/wlan_dsss_rx_snr.vhd] ]     \
 ] ;
 
 set wlan_synthesis_top [ list \
