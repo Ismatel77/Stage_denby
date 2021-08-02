@@ -119,8 +119,6 @@ add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_power
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/burst
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/N
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/S
-add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/bruit
-add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/util
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_snr/snr
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/in_valid
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_lock

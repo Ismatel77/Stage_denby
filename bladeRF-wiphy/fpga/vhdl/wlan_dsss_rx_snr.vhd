@@ -26,8 +26,6 @@ architecture arch of wlan_dsss_rx_snr is
     type INT_ARRAY is array (integer range <>) of integer;
     signal N : integer;
     signal S : integer;
-    signal bruit : INT_ARRAY(0 to 127);
-    signal util : INT_ARRAY(0 to 127);
 begin
     
     noise : process(all)
