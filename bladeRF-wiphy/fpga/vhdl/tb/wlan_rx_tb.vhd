@@ -20,7 +20,6 @@ library ieee ;
     use ieee.std_logic_1164.all ;
     use ieee.numeric_std.all ;
     use ieee.math_real.all ;
-    use STD.textio.all;
     use ieee.std_logic_textio.all;
 
 library wlan ;
@@ -61,8 +60,6 @@ architecture arch of wlan_rx_tb is
     signal nco_outputs  :   nco_output_t ;
     signal nco_en       :   std_logic ;
 
-
-    file file_RESULTS : text;
 
     signal data_valid   :   std_logic;
     signal data         :   std_logic_vector(7 downto 0);
@@ -182,21 +179,6 @@ begin
             end if;
         end if ;
     end process ;
-
-    process(clock)
-        file file_RESULTS : text;
-        variable v_OLINE     : line;
-    begin
-        file_open(file_RESULTS, "output_results.txt", write_mode);
-
-        if( rising_edge( clock ) ) then
-            if ( data_valid) then
-                write(v_OLINE, data, right, 15);
-                hwrite(v_OLINE, data, right, 15);
-                writeline(file_RESULTS, v_OLINE);
-            end if;
-        end if;
-    end process;
 
 
     U_sample_saver : entity work.wlan_sample_saver
