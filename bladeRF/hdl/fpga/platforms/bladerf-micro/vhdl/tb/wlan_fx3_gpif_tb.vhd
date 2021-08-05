@@ -696,16 +696,18 @@ begin
     end process;
 
     process(<< signal U_wlan_top.U_wlan_rx.U_acquisition.burst : std_logic>>,
-            << signal U_wlan_top.U_wlan_rx.dsss_data  : std_logic_vector(7 downto 0)>>)
+            << signal U_wlan_top.U_wlan_rx.dsss_data  : std_logic_vector(7 downto 0)>>,
+            << signal U_wlan_top.U_wlan_rx.dsss_data_valid  : std_logic>>)
 
         alias burst is << signal U_wlan_top.U_wlan_rx.U_acquisition.burst : std_logic>>;
         alias data is << signal U_wlan_top.U_wlan_rx.dsss_data  : std_logic_vector(7 downto 0)>>;
+        alias data_valid is << signal U_wlan_top.U_wlan_rx.dsss_data_valid  : std_logic>>;
         file file_RESULTS : text;
         variable v_OLINE     : line;
     begin
         file_open(file_RESULTS, "output_results.txt", write_mode);
 
-        if ( burst = '1') then
+        if ( burst = '1' and data_valid = '1') then
             write(v_OLINE, data, right, 4);
             hwrite(v_OLINE, data, right, 4);
             writeline(file_RESULTS, v_OLINE);
