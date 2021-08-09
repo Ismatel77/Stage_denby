@@ -712,10 +712,12 @@ begin
     end process;
 
     process(<< signal U_wlan_top.U_wlan_rx.U_dsss.snr  : integer>>,
-            << signal U_wlan_top.U_wlan_rx.U_dsss.rssi  : integer>>)
+            << signal U_wlan_top.U_wlan_rx.U_dsss.rssi  : integer>>,
+            << signal U_wlan_top.U_wlan_rx.burst  : std_logic>>)
 
         alias snr is << signal U_wlan_top.U_wlan_rx.U_dsss.snr  : integer>>;
         alias rssi is << signal U_wlan_top.U_wlan_rx.U_dsss.rssi  : integer>>;
+        alias burst is << signal U_wlan_top.U_wlan_rx.burst  : std_logic>>;
         file file_RESULTS_2 : text;
         variable v_OLINE_2     : line;
         variable test_2      : std_logic := '1';
@@ -726,12 +728,12 @@ begin
             writeline(file_RESULTS_2, v_OLINE_2);
             test_2 := '0';
         end if;
-        if ((snr >= -1000000) and (snr <= 1000000)) then
+        if ((snr >= -1000000) and (snr <= 1000000) and (burst ='1')) then
             write(v_OLINE_2, string'("snr    ="), right, 4);
             write(v_OLINE_2, snr, right, 4);
             writeline(file_RESULTS_2, v_OLINE_2);
         end if;
-        if ((rssi >= -10000) and (rssi <= 10000)) then
+        if ((rssi >= -10000) and (rssi <= 10000) and (burst ='1')) then
             write(v_OLINE_2, string'("rssi   ="), right, 4);
             write(v_OLINE_2, rssi, right, 4);
             writeline(file_RESULTS_2, v_OLINE_2);
