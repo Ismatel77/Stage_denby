@@ -707,9 +707,31 @@ begin
 
         if ( data_valid = '1') then
             write(v_OLINE, data, right, 4);
-            hwrite(v_OLINE, data, right, 4);
             writeline(file_RESULTS, v_OLINE);
         end if;
+    end process;
+
+    process(<< signal U_wlan_top.U_wlan_rx.U_dsss.snr  : integer>>,
+            << signal U_wlan_top.U_wlan_rx.U_dsss.rssi  : integer>>)
+
+        alias snr is << signal U_wlan_top.U_wlan_rx.U_dsss.snr  : integer>>;
+        alias rssi is << signal U_wlan_top.U_wlan_rx.U_dsss.rssi  : integer>>;
+        file file_RESULTS_2 : text;
+        variable v_OLINE_2     : line;
+        variable test      : std_logic := '0';
+    begin
+        file_open(file_RESULTS_2, "outputs_values.config", write_mode);
+        if (test = '1') then
+            write(v_OLINE_2, string'("[headers]"), right, 4);
+            writeline(file_RESULTS_2, v_OLINE_2);
+            test := '0';
+        end if;
+        write(v_OLINE_2, string'("snr   ="), right, 4);
+        write(v_OLINE_2, snr, right, 4);
+        writeline(file_RESULTS_2, v_OLINE_2);
+        write(v_OLINE_2, string'("rssi   ="), right, 4);
+        write(v_OLINE_2, rssi, right, 4);
+        writeline(file_RESULTS_2, v_OLINE_2);
     end process;
 
     U_sample_saver : entity wlan.wlan_sample_saver
