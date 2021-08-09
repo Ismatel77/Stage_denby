@@ -726,12 +726,16 @@ begin
             writeline(file_RESULTS_2, v_OLINE_2);
             test_2 := '0';
         end if;
-        write(v_OLINE_2, string'("snr   ="), right, 4);
-        write(v_OLINE_2, snr, right, 4);
-        writeline(file_RESULTS_2, v_OLINE_2);
-        write(v_OLINE_2, string'("rssi   ="), right, 4);
-        write(v_OLINE_2, rssi, right, 4);
-        writeline(file_RESULTS_2, v_OLINE_2);
+        if ((snr >= -1000) or (snr <= 1000)) then
+            write(v_OLINE_2, string'("snr   ="), right, 4);
+            write(v_OLINE_2, snr, right, 4);
+            writeline(file_RESULTS_2, v_OLINE_2);
+        end if;
+        if ((rssi >= -1000) or (rssi <= 1000)) then
+            write(v_OLINE_2, string'("rssi   ="), right, 4);
+            write(v_OLINE_2, rssi, right, 4);
+            writeline(file_RESULTS_2, v_OLINE_2);
+        end if;
     end process;
 
     U_sample_saver : entity wlan.wlan_sample_saver
