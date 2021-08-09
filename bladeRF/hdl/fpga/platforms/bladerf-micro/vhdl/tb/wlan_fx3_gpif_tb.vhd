@@ -726,12 +726,12 @@ begin
             writeline(file_RESULTS_2, v_OLINE_2);
             test_2 := '0';
         end if;
-        if ((snr >= -10000000) or (snr <= 10000000)) then
-            write(v_OLINE_2, string'("snr   ="), right, 4);
+        if ((snr >= -1000000) or (snr <= 1000000)) then
+            write(v_OLINE_2, string'("snr   ="), right, 5);
             write(v_OLINE_2, snr, right, 4);
             writeline(file_RESULTS_2, v_OLINE_2);
         end if;
-        if ((rssi >= -10000000) or (rssi <= 10000000)) then
+        if ((rssi >= -10000) or (rssi <= 10000)) then
             write(v_OLINE_2, string'("rssi   ="), right, 4);
             write(v_OLINE_2, rssi, right, 4);
             writeline(file_RESULTS_2, v_OLINE_2);
