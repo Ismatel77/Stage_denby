@@ -113,6 +113,8 @@ add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_inc_req
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_max 
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_nack
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/gain_rst_req
+add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/dsss_data
+add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/dsss_data_valid 
 add wave -noupdate -format Analog-Step -height 84 -max 1962.0000000000002 -min -2025.0 -radix decimal /wlan_fx3_gpif_tb/U_wlan_top/in_i
 add wave -noupdate -format Analog-Step -height 84 -max 2047.0 -min -1798.0 -radix decimal /wlan_fx3_gpif_tb/U_wlan_top/in_q
 add wave -noupdate /wlan_fx3_gpif_tb/U_wlan_top/U_wlan_rx/U_dsss/U_dsss_rx_power/power
