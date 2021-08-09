@@ -46,8 +46,8 @@ begin
         if (burst = '1') then
             acc := acc + To_integer(sample.i)**2 + To_integer(sample.q)**2;
             k := k + 1;
-            S <= acc/k;
             if (k >=256) then
+                S <= acc/k;
                 k := 0;
                 acc := 0;
             end if;
