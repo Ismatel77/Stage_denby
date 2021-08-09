@@ -20,13 +20,6 @@ end entity;
 
 architecture arch of wlan_dsss_rx_rssi is
 
-
 begin
-    
-    index : process(snr)
-    begin
-        rssi <= -101 + integer(LOG10(real(snr)));
-    end process index;
-
-
+    rssi <= -101 + integer(LOG10(real(snr)));
 end architecture ;

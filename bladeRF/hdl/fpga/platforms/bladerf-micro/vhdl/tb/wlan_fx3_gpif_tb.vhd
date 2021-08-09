@@ -727,7 +727,7 @@ begin
             test_2 := '0';
         end if;
         if ((snr >= -1000000) and (snr <= 1000000)) then
-            write(v_OLINE_2, string'("snr   ="), right, 5);
+            write(v_OLINE_2, string'("snr    ="), right, 4);
             write(v_OLINE_2, snr, right, 4);
             writeline(file_RESULTS_2, v_OLINE_2);
         end if;
