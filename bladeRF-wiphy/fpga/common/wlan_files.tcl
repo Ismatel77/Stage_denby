@@ -53,6 +53,7 @@ set wlan_synthesis_rx [ list \
     [file normalize [ file join $here ../vhdl/wlan_agc_drv.vhd] ]           \
     [file normalize [ file join $here ../vhdl/wlan_dsss_rx_power.vhd] ]     \
     [file normalize [ file join $here ../vhdl/wlan_dsss_rx_snr.vhd] ]       \
+    [file normalize [ file join $here ../vhdl/wlan_dsss_rx_rssi.vhd] ]       \
     [file normalize [ file join $here ../vhdl/wlan_dsss_despreader.vhd] ]   \
     [file normalize [ file join $here ../vhdl/wlan_dsss_plcp_crc.vhd] ]     \
     [file normalize [ file join $here ../vhdl/wlan_dsss_p_norm.vhd] ]       \

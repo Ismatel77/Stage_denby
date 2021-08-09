@@ -68,6 +68,7 @@ architecture arch of wlan_dsss_rx is
 
    signal power         :  integer;
    signal snr           :  integer;
+   signal rssi          :  integer;
 
 begin
     U_dsss_rx_controller : entity work.wlan_dsss_rx_controller
@@ -165,6 +166,16 @@ begin
         sample  => sample,
 
         snr   => snr
+     ) ;
+
+      U_dsss_rx_rssi : entity work.wlan_dsss_rx_rssi
+      port map (
+        clock   => clock,
+        reset   => reset,
+
+        snr   => snr,
+
+        rssi => rssi
      ) ;
 
 end architecture ;
