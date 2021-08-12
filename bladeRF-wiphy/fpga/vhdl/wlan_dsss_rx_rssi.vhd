@@ -21,5 +21,5 @@ end entity;
 architecture arch of wlan_dsss_rx_rssi is
 
 begin
-    rssi <= -101 + integer(10 * LOG10(real(snr)));
+    rssi <= -101 + integer(real(10) * LOG10(real(snr)));
 end architecture ;
