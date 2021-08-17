@@ -703,12 +703,18 @@ begin
         file file_RESULTS : text;
         variable v_OLINE     : line;
     begin
-        file_open(file_RESULTS, "output_results.txt", write_mode);
-
-        if ( data_valid = '1') then
-            write(v_OLINE, data, right, 4);
-            writeline(file_RESULTS, v_OLINE);
+        if(rx_reset = '1') then
+            file_open(file_RESULTS, "output_results.txt", write_mode);
+            file_close(file_RESULTS); 
+        else
+            file_open(file_RESULTS, "output_results.txt", append_mode);
+            if ( data_valid = '1') then
+                write(v_OLINE, data, right, 4);
+                writeline(file_RESULTS, v_OLINE);
+            end if;
+            file_close(file_RESULTS);
         end if;
+        
     end process;
 
     process(<< signal U_wlan_top.U_wlan_rx.U_dsss.snr  : integer>>,
@@ -721,16 +727,22 @@ begin
         file file_RESULTS_2 : text;
         variable v_OLINE_2     : line;
     begin
-        file_open(file_RESULTS_2, "raw_headers.txt", write_mode);
-        if ((snr >= -1000000) and (snr <= 1000000) and (burst ='1')) then
-            write(v_OLINE_2, string'("snr    ="), right, 4);
-            write(v_OLINE_2, snr, right, 4);
-            writeline(file_RESULTS_2, v_OLINE_2);
-        end if;
-        if ((rssi >= -10000) and (rssi <= 10000) and (burst ='1')) then
-            write(v_OLINE_2, string'("rssi   ="), right, 4);
-            write(v_OLINE_2, rssi, right, 4);
-            writeline(file_RESULTS_2, v_OLINE_2);
+        if(rx_reset = '1') then
+            file_open(file_RESULTS_2, "raw_headers.txt", write_mode);
+            file_close(file_RESULTS_2);
+        else
+            file_open(file_RESULTS_2, "raw_headers.txt", append_mode);
+            if ((snr >= -1000000) and (snr <= 1000000) and (burst ='1')) then
+                write(v_OLINE_2, string'("snr    ="), right, 4);
+                write(v_OLINE_2, snr, right, 4);
+                writeline(file_RESULTS_2, v_OLINE_2);
+            end if;
+            if ((rssi >= -10000) and (rssi <= 10000) and (burst ='1')) then
+                write(v_OLINE_2, string'("rssi   ="), right, 4);
+                write(v_OLINE_2, rssi, right, 4);
+                writeline(file_RESULTS_2, v_OLINE_2);
+            end if;
+            file_close(file_RESULTS_2);
         end if;
     end process;
 
